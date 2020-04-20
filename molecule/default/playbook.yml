@@ -1,7 +1,11 @@
 ---
-- name: Say Hello
+- name: Install Postgres
   become: true
   hosts: instance
   tasks:
-    - name: Hello
-      shell: echo 'Hello'
+    - name: Install PostrgreSQL
+      apt:
+        pkg: 
+          - postgresql
+          - postgresql-contrib
+        state: latest

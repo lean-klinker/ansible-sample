@@ -22,8 +22,14 @@ verifier:
 scenario:
     name: default
     test_sequence:
-        - destroy
-        - create
-        - converge
         - lint
+        - destroy
+        - dependency
+        - syntax
+        - create
+        - prepare
+        - converge
+        - idempotence # This will rerun converge to see if anything is marked as changed
+        - side_effect
         - verify
+        - destroy

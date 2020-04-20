@@ -1,2 +1,2 @@
 def test_machine(host):
-    assert True
+    assert host.package('postgresql').is_installed
