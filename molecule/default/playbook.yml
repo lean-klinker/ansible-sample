@@ -1,7 +1,7 @@
 ---
 - name: Say Hello
   become: true
-  hosts: all
+  hosts: instance
   tasks:
     - name: Hello
       shell: echo 'Hello'

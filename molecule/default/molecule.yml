@@ -19,3 +19,11 @@ verifier:
     options:
         v: true
         sudo: true
+scenario:
+    name: default
+    test_sequence:
+        - destroy
+        - create
+        - converge
+        - lint
+        - verify
