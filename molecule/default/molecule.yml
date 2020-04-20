@@ -1,0 +1,21 @@
+dependency:
+    name: galaxy
+driver:
+    name: docker
+platforms:
+    - name: instance
+      image: ubuntu
+      groups:
+        - rhel
+provisioner:
+    name: ansible
+    log: true
+    lint: ansible-lint
+    playbooks:
+        converge: ./playbook.yml
+verifier:
+    name: testinfra
+    directory: ./tests
+    options:
+        v: true
+        sudo: true

@@ -1,0 +1,7 @@
+---
+- name: Say Hello
+  become: true
+  hosts: all
+  tasks:
+    - name: Hello
+      shell: echo 'Hello'
